@@ -541,13 +541,13 @@ addthis:
 # 如果有符号 ‘ ，请在 ’ 前面加上 \
 subtitle:
   enable: true
-  loop: true # 是否循环
+  loop: false # 是否循环
   showCursor: true # 是否显示光标
   startDelay: 300 # 开始延迟
   typeSpeed: 100 # 打字速度
   backSpeed: 50 # 删除速度
   sub:
-    - My heart is  the work
+    - 思い出なんていらないよ、だって"今"以外、誰も生きれないから。
     # - 从来没有真正的绝境, 只有心灵的迷途
     # - Never really desperate, only the lost of the soul
 
