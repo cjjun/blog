@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Jonderland
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
+author: Jiajun Chen
 language: en
 timezone: ''
 
@@ -41,21 +41,26 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
+marked:
+  prependRoot: true
+  postAsset: true
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace: ''
   wrap: true
   hljs: false
 prismjs:
-  enable: false
+  enable: true
   preprocess: true
   line_number: true
   tab_replace: ''
+plugins:
+  - hexo-reference
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
