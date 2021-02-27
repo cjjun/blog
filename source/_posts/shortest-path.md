@@ -1,7 +1,7 @@
 ---
-title: Shortest path--Dijkstra, Bellman-ford and SPFA
+title: Shortest path--Dijkstra, Bellman-ford and Floyd
 date: 2021-02-28 00:11:20
-tags: [""Shortest Path",Dijkstra", "SPFA"]
+tags: ["Shortest Path","Dijkstra", "Floyd"]
 ---
 # Shortest path algorithm
 ## 1. Dijkstra
