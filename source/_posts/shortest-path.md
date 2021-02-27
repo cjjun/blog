@@ -16,7 +16,7 @@ Dijkstra's algorithm works as follow. Given a **Known set K** and distrance func
 
 By induction, suppose we have already known shortest distance between $S$ and vertices in $K$. Suppose vertices in set $N$ are adjacent to set $K$. We can find the distance $d_S(y)$ for $y\in N$ by simply stretching from $K$ to $N$.
 
-If $y^*=\argmin_{y \in N} d_S(y)$, the we claim $D_s(y^*)=d_s(y^*)$. The reason is fairly simple: if there is a better path s -- x -|- y -- y*, where $\{s, x\} \subseteq K$, $\{y, y^*\} \subseteq N$, obviously 
+If $y^*= argmin_{y \in N} d_S(y)$, the we claim $D_s(y^*)=d_s(y^*)$. The reason is fairly simple: if there is a better path s -- x -|- y -- y*, where $\{s, x\} \subseteq K$, $\{y, y^*\} \subseteq N$, obviously 
 
 $$
 \begin{aligned}
