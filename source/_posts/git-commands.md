@@ -2,15 +2,13 @@
 title: Git commands
 date: 2021-02-21 16:46:16
 tags: ["git"]
-
 ---
 
-Git commands
-===
+# Git commands
 
 This is a brief recap of frequently used git commands and some important design ideas in git.
 
-# 1. Initialization and status
+## 1. Initialization and status
 ```git
 git init directory
 ```
@@ -28,7 +26,7 @@ git log
 ```
  to check tracked status.
 
-# 2. Working directory, stage, repository
+## 2. Working directory, stage, repository
 In principle, the following pseudocode can help to explain git behavior:
 ```cpp
 class GitNode{
@@ -103,7 +101,7 @@ To update snapshot of tracked (previously or currently) files, use
 git commit -am 'message'
 ```
 
- # 3. Branch and checkout
+ ## 3. Branch and checkout
  Personally, I would rather to consider node before considering branch. In fact, branch is a later developed trick to make chains more interpretable.
 
  Suppose you begin with a branch head pointer ``BR_HEAD`` and global head pointer ``HEAD`` in the same GitNode. At the same time, the system has already beginned editing a temporary uncollected GitNode. ``Add`` operation will change snaposhot of it, and commit operation will make it finished and corresponding branch linked-list will be extended.
@@ -134,8 +132,8 @@ Checkout can not only jump to any branch, but also jump to any gitnode given has
 
 Whenever ``checkout`` happens that ``HEAD `` leaves current branch, the temporary detached branch will be deleted. 
 
-# 4. Reset, revert, rebase, restore
-## 4.1. reset
+## 4. Reset, revert, rebase, restore
+### 4.1. Reset
 ``reset`` is operation regarding ``BR_HEAD``. Tracking backwardly from ``BR_HEAD``, a complete linked-list can be found. ``reset`` is manipulating this linked-list, plus the temporarily processing GitNode, which has not yet been attached to branch.
 
 There are three modes of ``reset``, which are:
@@ -157,7 +155,7 @@ HEAD^       (Move back 1 step)
 HEAD~n      (Move n steps back)
 HEAD@{n}    (Move n step(s) forward)
 ```
-## 4.2. revert
+### 4.2. Revert
 ```
 revert -n [target]
 ```
@@ -169,7 +167,7 @@ Suppose the difference (inversely) includes three parts: ``add``, ``remove``, an
 
 If the files have not been changed since target version (we mean temporary gitnode), they will be deleted without doubt. If somethings happens, it will not be removed, and revert will fail. In this case, we have to delete those files manually.
 
-## 4.3. rebase
+### 4.3. Rebase
 ``rebase`` can update previous commits in more complex ways. A typical usage is merging commits.
 
 ```
@@ -177,14 +175,15 @@ pick xxxx
 fixup xxxx
 squash xxxx
 ```
-## 4.4. restore
+## 5. Restore
 ```git
 git restore [target]    // Restore files to snapshot in TrackFilesSnapshot
 git restore --staged    // Remove file from tracked directory but not change its content)
 ```
 
 **To understand how git recognize difference, check the link [Myer algorithm](https://cjting.me/2017/05/13/how-git-generate-diff/)**.
-# 5. Remote warehouse
+
+## 6. Remote warehouse
 Add remote source ``origin``
 ```git
 git remote add origin git@github.com:/xxx/xxx.git
