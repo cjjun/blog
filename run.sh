@@ -1,3 +1,5 @@
+# npm install --save hexo-katex-macros
+
 /usr/local/bin/hexo clean
 /usr/local/bin/hexo g
 /usr/local/bin/hexo d

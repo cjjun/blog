@@ -9,24 +9,22 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": "5.3.0"
+    "version": "6.1.0"
   },
   "dependencies": {
-    "hexo": "^5.0.0",
+    "@upupming/hexo-renderer-markdown-it-plus": "^2.0.2",
+    "hexo": "^6.0.0",
     "hexo-deployer-git": "^3.0.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-index": "^2.0.0",
     "hexo-generator-tag": "^1.0.0",
-    "hexo-katex": "0.0.13",
+    "hexo-katex-macros": "^0.0.10",
     "hexo-math": "^4.0.0",
-    "hexo-reference": "^1.0.4",
-    "hexo-renderer-ejs": "^1.0.0",
-    "hexo-renderer-marked": "^3.0.0",
-    "hexo-renderer-pandoc": "^0.3.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-markdown-it-plus": "^1.0.4",
     "hexo-renderer-stylus": "^2.0.0",
-    "hexo-renderer-syzoj-renderer": "git+https://github.com/Menci/hexo-renderer-syzoj-renderer.git",
-    "hexo-server": "^2.0.0",
+    "hexo-server": "^3.0.0",
     "hexo-theme-landscape": "^0.0.3"
   }
 }

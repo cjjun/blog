@@ -10,22 +10,22 @@ katex: true
 ---
 # Shortest path algorithm
 ## 1. Dijkstra
-Given a graph ``G=(V, E)`` with positive edge and a source edge ``S``, how to find the shortest path/distance from ``S`` to any vertex? 
+Given a graph ``G=(V, E)`` with positive edge and a source vertex ``s``, how to find the shortest path/distance from ``s`` to any vertex? 
 
-Dijkstra's algorithm works as follow. Given a **Known set K** and distrance function $D_S(x)$ for $x \in K$, initialized with $K=\{S\}$, $D_S(S) = 0$.
+Dijkstra's algorithm works as follow. Given a **Known set K** and distrance function $D_s(x)$ for $x \in K$, initialized with $K=\{s\}$, $D_s(s) = 0$.
 
-By induction, suppose we have already known shortest distance between $S$ and vertices in $K$. Suppose vertices in set $N$ are adjacent to set $K$. We can find the distance $d_S(y)$ for $y\in N$ by simply stretching from $K$ to $N$.
+By induction, suppose we have already known shortest distance between $s$ and vertices in $K$. Suppose vertices in set $N$ are vertices adjacent to vertices in set $K$. We can define the distance $d_S(y)$ for $y\in N$ by simply stretching from $K$ to $N$, namely $d_S(y) = \min_{x \in K} D_S(x) + d_{xy}$.
 
 If $y^*= argmin_{y \in N} d_S(y)$, the we claim $D_s(y^*)=d_s(y^*)$. The reason is fairly simple: if there is a better path s -- x -|- y -- y*, where $\{s, x\} \subseteq K$, $\{y, y^*\} \subseteq N$, obviously 
 
 $$
 \begin{aligned}
-D_S(y^*) &= D_S(x) + d(x,y) + D_y(y^*) \\
-    &= D_S(y) + D_y(y^*) \\
-    &\ge D_S(y^*)
+D_s(y^*) &= D_s(x) + d(x,y) + D_y(y^*) \\
+    &= D_s(y) + D_y(y^*) \\
+    &\ge D_s(y^*)
 \end{aligned} \tag{1}
 $$
-By premisis of the problem, the equation holds true only when $D_S(y)=D_S(y^*)$ and $D_y(y^*)=0$. Obviously, this can take place only when $y=y^*$. Therefore we update by letting $N'=N+\{y^*\}$, $D_S(y^*)=d_S(y^*)$
+By premisis of the problem, the equation holds true only when $D_s(y)=D_s(y^*)$ and $D_y(y^*)=0$. Obviously, this can take place only when $y=y^*$. Therefore we update by letting $K'=K+\{y^*\}$, $D_s(y^*)=d_S(y^*)$
 
 ```cpp
 // Dijkstra with heap
