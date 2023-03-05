@@ -119,5 +119,5 @@ theme: hexo-theme-matery
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:cjjun/cjjun.github.io.git
+  repo: git@github.com:cjjun/blog.git
   branch: demo
